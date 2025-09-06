@@ -1,22 +1,16 @@
 "use client";
 
-import { ButtonHTMLAttributes } from "react";
+import ButtonProps from "../types/ButtonsProps";
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  label: string;
-};
-
-export default function Button({
-  label,
-  className = "",
-  ...props
-}: ButtonProps) {
+const Button = ({ label, className = "", ...props }: ButtonProps) => {
   return (
     <button
       {...props}
-      className={`w-full rounded-lg py-2 text-white transition ${className}`}
+      className={`w-full rounded-lg py-2 text-white transition bg-[#0F437F] hover:bg-[#0D396C] ${className}`}
     >
       {label}
     </button>
   );
-}
+};
+
+export default Button;

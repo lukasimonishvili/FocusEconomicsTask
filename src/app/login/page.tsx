@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import LoginForm from "../components/LoginForm";
 
-export default async function LoginPage() {
+const LoginPage = async () => {
   const session = await getServerSession(authOptions);
 
   if (session) {
@@ -15,4 +15,6 @@ export default async function LoginPage() {
       <LoginForm />
     </div>
   );
-}
+};
+
+export default LoginPage;
