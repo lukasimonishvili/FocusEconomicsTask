@@ -1,16 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import IMetricListProps from "../types/IMetricListProps";
 
-const MetricsList = ({
-  metrics,
-  page,
-  totalPages,
-}: {
-  metrics: any[];
-  page: number;
-  totalPages: number;
-}) => {
+const MetricsList = ({ metrics, page, totalPages }: IMetricListProps) => {
   return (
     <div className="mt-[70px] ml-[218px] p-6 max-[901px]:ml-[50px]">
       <h2 className="text-xl font-bold mb-4">Metrics</h2>

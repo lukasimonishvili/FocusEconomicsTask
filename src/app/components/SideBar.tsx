@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import FilterPanel from "./FilterPanel";
 
 const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +31,8 @@ const SideBar = () => {
           }`}
         ></span>
       </button>
+
+      <FilterPanel isOpen={isOpen} />
     </aside>
   );
 };
