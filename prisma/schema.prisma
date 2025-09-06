@@ -21,3 +21,14 @@ model Metric {
   unidad     String
   fecha      DateTime
 }
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  lastName  String
+  email     String   @unique
+  birthDay  DateTime
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
