@@ -68,7 +68,7 @@ Dev dependencies include:
 
 ### 3. Database Setup
 
-This project uses **Prisma** with a SQL database (PostgreSQL, MySQL, or SQLite).
+This project uses **Prisma** with a SQL database.
 
 1. **Set Environment Variable** in `.env`:
 
@@ -91,3 +91,50 @@ npm run seed
 ```
 
 This populates the database with sample metrics data.
+
+### 4. Run the Project
+
+**Development Mode:**
+
+```bash
+npm run dev
+```
+
+## Open your browser at http://localhost:3000
+
+## Technology Benefits
+
+### Next.js
+
+- Combines server-side rendering (SSR) with client-side React
+- Simplifies routing, API routes, and server-side authentication
+- Boosts SEO and performance
+
+### Prisma (Regular SQL)
+
+- Type-safe queries reduce runtime errors
+- Supports relational databases (PostgreSQL, MySQL, SQLite)
+- Easy to implement pagination, filtering, and sorting
+
+### TailwindCSS
+
+- Utility-first CSS framework for rapid UI development
+- Enables responsive and consistent styling
+- Full control over design without heavy component libraries
+
+### Recharts
+
+- Simple and declarative React charting library
+- Provides responsive and interactive charts out-of-the-box
+- Easy integration with React components and data arrays
+
+### Chart Selection
+
+- Line, Bar, and Pie charts cover most business insights: trends, comparisons, and proportions
+- Histogram included in data preparation but optional for future visualization
+
+## Notes
+
+- Search bar updates table **after user stops typing** (debounced)
+- Sidebar collapses on screens **≤900px** with burger menu
+- Pagination is server-side, fetching **15 items per page**
