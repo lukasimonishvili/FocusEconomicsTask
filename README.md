@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FocusEconomicsTask
+
+## Project Overview
+
+This is a **fullstack web application** built with **Next.js** that displays metrics with filtering, sorting, pagination, and interactive charts. Users can authenticate using **SSO** and see a dashboard with metrics represented in tables and charts.
+
+The application demonstrates fullstack capabilities:
+
+- Server-side rendering (SSR) with Next.js
+- Database integration using Prisma and SQL
+- Authentication using NextAuth.js (SSO compatible)
+- Interactive charts using Recharts
+- Responsive UI using TailwindCSS
+
+---
+
+## Features
+
+1. **User Authentication (SSO)**  
+   Users log in via a Single Sign-On system. NextAuth.js manages sessions and authentication flow.
+
+2. **Dashboard**
+
+   - Metrics table with pagination (15 items per page)
+   - Filtering by keyword, date, and value range
+   - Sorting by date (`fecha`) and value (`valor`)
+
+3. **Charts**
+   - Trend Over Time (Line Chart)
+   - Category Comparison (Bar Chart)
+   - Category Proportions (Pie Chart)
+   - Value Distribution (Histogram, optional)
+4. **Responsive Design**  
+   Fully responsive layout using TailwindCSS; sidebar and charts adapt to screen size.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd focuseconomicstask
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This will install all required dependencies:
 
-## Learn More
+- **Next.js** – frontend and backend framework
+- **React & React-DOM** – UI library
+- **NextAuth.js** – authentication & SSO support
+- **Prisma** – ORM for SQL databases
+- **Recharts** – charting library
+- **TailwindCSS** – utility-first CSS framework
 
-To learn more about Next.js, take a look at the following resources:
+Dev dependencies include:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **TypeScript**
+- **ESLint**
+- **Tailwind PostCSS integration**
+- **Prisma CLI tool**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Database Setup
 
-## Deploy on Vercel
+This project uses **Prisma** with a SQL database (PostgreSQL, MySQL, or SQLite).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Set Environment Variable** in `.env`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+DATABASE_URL="mysql://dbuser:dbpassword@localhost:3306/Statistics"
+```
+
+Replace `USER`, `PASSWORD`, `HOST`, `PORT`, and `DATABASE` with your database credentials.
+
+2. **Run Prisma Migrations:**
+
+```bash
+npx prisma migrate dev --name init
+```
+
+3. **Seed the Database:**
+
+```bash
+npm run seed
+```
+
+This populates the database with sample metrics data.

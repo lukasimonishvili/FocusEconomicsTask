@@ -6,6 +6,7 @@ import SideBar from "./components/SideBar";
 import { prisma } from "./lib/prisma";
 import MetricsList from "./components/MetricList";
 import ISearchParams from "./types/ISearchParams";
+import MetricsCharts from "./components/MetricsCharts";
 
 export default async function HomePage({
   searchParams,
@@ -71,6 +72,7 @@ export default async function HomePage({
     <>
       <Header />
       <SideBar />
+      <MetricsCharts metrics={metrics} />
       <MetricsList metrics={metrics} page={page} totalPages={totalPages} />
     </>
   );
