@@ -8,7 +8,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full h-[70px] border-b border-[#E9EBEC] flex items-center justify-between px-6 bg-white z-50">
       <Image
         src="/logo.svg"
-        alt=" "
+        alt="logo"
         priority
         height={32}
         width={306}

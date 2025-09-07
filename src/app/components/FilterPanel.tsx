@@ -61,19 +61,28 @@ const FilterPanel = ({ isOpen }: IFilterPanelProps) => {
       }`}
     >
       <div>
-        <label className="block text-sm font-medium mb-2">Search</label>
+        <label
+          htmlFor="search-input"
+          className="block text-sm font-medium mb-2"
+        >
+          Search
+        </label>
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search by keyword..."
           className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          id="search-input"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-2">Sort by Fecha</label>
+        <label className="block text-sm font-medium mb-2" htmlFor="dateSort">
+          Sort by Fecha
+        </label>
         <select
+          id="dateSort"
           value={sortFecha}
           onChange={(e) => setSortFecha(e.target.value as "asc" | "desc" | "")}
           className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -85,8 +94,11 @@ const FilterPanel = ({ isOpen }: IFilterPanelProps) => {
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-2">Sort by Valor</label>
+        <label htmlFor="valueSort" className="block text-sm font-medium mb-2">
+          Sort by Valor
+        </label>
         <select
+          id="valueSort"
           value={sortValor}
           onChange={(e) => setSortValor(e.target.value as "asc" | "desc" | "")}
           className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
